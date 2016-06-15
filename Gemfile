@@ -43,6 +43,9 @@ group :development, :test do
   gem 'spring'
 
   gem 'themoviedb'
+
+  gem 'devise'
+
   
 end
 
