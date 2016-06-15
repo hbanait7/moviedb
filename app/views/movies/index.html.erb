@@ -2,4 +2,5 @@
 
 <% @movies.each do |movie| %>
   <p><%= movie.title %></p>
+  <p><%= image_tag('http://image.tmdb.org/t/p/w185/' + movie.poster_path) %></p>
 <% end %>
