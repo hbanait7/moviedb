@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   root 'movies#index'
 
+  get 'movies/:id' => 'movies#show', as: 'movie'
+
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.

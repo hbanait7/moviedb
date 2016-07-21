@@ -1,0 +1,44 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar-custom-background {
+  background-color: #3A9425;
+  border: 1px solid black;
+}
+
+.navbar-left img {
+  height: 52px;
+  float: left;
+  margin-right: 18px;
+}
+
+#logout_link, #profile_link, #signup_link, #login_link {
+  float: right;
+  border: 3px solid black;
+  margin: 8px 5px 0 5px;
+  padding: 5px;
+  background-color: white;
+}
+
+#logout_link a, #profile_link a, #signup_link a, #login_link a {
+  text-decoration: none;
+  color: #3A9425;
+}
+
+#logout_link:hover, #profile_link:hover, #signup_link:hover, #login_link:hover {
+  background-color: #FE0000;
+  a {
+    color: white;
+  }
+}
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    margin-bottom: 40px;
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+    border-bottom: none;
+}

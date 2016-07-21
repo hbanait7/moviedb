@@ -46,6 +46,7 @@ group :development, :test do
 
   gem 'devise'
 
+  gem 'bootstrap-sass'
   
 end
 

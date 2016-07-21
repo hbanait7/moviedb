@@ -1,6 +1,18 @@
-<h1>All Movies</h1>
-
-<% @movies.each do |movie| %>
-  <p><%= movie.title %></p>
-  <p><%= image_tag('http://image.tmdb.org/t/p/w185/' + movie.poster_path) %></p>
-<% end %>
+<div class="row">
+  <% @movies.each do |movie| %>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <div class="clearfix visible-lg"></div>
+      <%= link_to image_tag('http://image.tmdb.org/t/p/w185/' + movie.poster_path, :size => "185x270"), movie_path(movie) %>
+      <div class="caption">
+        <h3 class="movie_title"><%= movie.title %></h3>
+        <p class="movie_release"><%= movie.release_date %></p>
+        <p><%= movie.overview %></p>
+        <p class="btn-centered">
+          <%= link_to 'More Info', movie_path(movie), class: "btn btn-default text-center" %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <% end %>   
+</div>

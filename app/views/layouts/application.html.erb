@@ -8,19 +8,31 @@
 </head>
 <body>
 
-  <%= link_to 'Home', root_path %>
-<% if user_signed_in? %>
-  <%= link_to 'Edit Account', edit_user_registration_path %>
-  <%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %>
-<% else %>
-  <%= link_to 'Sign Up', new_user_registration_path %>
-  <%= link_to 'Log In', new_user_session_path %>
-<% end %>
+<nav class="navbar navbar-default navbar-custom-background">
+  <div class="container-fluid">
+    <span class="navbar-left"><%= link_to image_tag('tomato.jpg'), root_path %></span>
+    <% if user_signed_in? %>
+      <button id="profile_link"><%= link_to 'Edit Account', edit_user_registration_path %></button>
+      <button id="logout_link"><%= link_to 'Log Out', destroy_user_session_path, :method=>'delete' %></button>
+    <% else %>
+      <button id="signup_link"><%= link_to 'Sign Up', new_user_registration_path %></button>
+      <button id="login_link"><%= link_to 'Log In', new_user_session_path %></button>
+    <% end %>
+  </div>
+</nav>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-<%= yield %>
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
